@@ -20,11 +20,11 @@ student.AddExam(new [] {new Exam("123", 123, DateTime.Now)});
 
 System.Console.WriteLine(student.ToString());
 
-System.Console.WriteLine("Введите кол-во строк");
-var nrow =  Int32.Parse(System.Console.ReadLine());
+System.Console.WriteLine("Введите кол-во строк и столбцов. (Разделители: пробел, запятая)");
+var str = System.Console.ReadLine();
 
-System.Console.WriteLine("Введите кол-во столбцов");
-var ncolumn = Int32.Parse(System.Console.ReadLine());
+var nrow = Int32.Parse(str.Split(new[] {' ', ','})[0]);
+var ncolumn = Int32.Parse(str.Split(new[] {' ', ','})[1]);
 
 var array1 = new Exam[nrow*ncolumn];
 var array2 = new Exam[nrow, ncolumn];

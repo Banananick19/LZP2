@@ -1,0 +1,15 @@
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\bin\Debug\net6.0\LPZ1.exe
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\bin\Debug\net6.0\LPZ1.deps.json
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\bin\Debug\net6.0\LPZ1.runtimeconfig.json
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\bin\Debug\net6.0\LPZ1.dll
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\bin\Debug\net6.0\LPZ1.pdb
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.csproj.AssemblyReference.cache
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.AssemblyInfoInputs.cache
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.AssemblyInfo.cs
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.csproj.CoreCompileInputs.cache
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.dll
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\refint\LPZ1.dll
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.pdb
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\LPZ1.genruntimeconfig.cache
+C:\Users\andrey\RiderProjects\LPZ1\LPZ1\obj\Debug\net6.0\ref\LPZ1.dll

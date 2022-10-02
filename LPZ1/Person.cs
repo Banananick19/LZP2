@@ -50,4 +50,35 @@ public class Person
     {
         return $"{_surname} {_name}";
     }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is Person)
+        {
+            var other = (Person) obj;
+            return _name == other.Name && _surname == other.Surname && _birthday == other.BirthDay;
+        }
+
+        return false;
+    }
+
+    public static bool operator ==(Person person1, Person person2)
+    {
+        return person1.Equals(person2);
+    }
+
+    public static bool operator !=(Person person1, Person person2)
+    {
+        return !(person1 == person2);
+    }
+
+    public override int GetHashCode()
+    {
+        return _birthday.GetHashCode() + _name.GetHashCode() + _surname.GetHashCode();
+    }
+
+    public object DeepCopy()
+    {
+        return new Person(Name, Surname, BirthDay);
+    }
 }

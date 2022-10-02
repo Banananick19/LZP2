@@ -2,75 +2,42 @@
 
 using LPZ1;
 
-var student = new Student();
-        
-System.Console.WriteLine(student.ToShortString());
-
-System.Console.WriteLine($"{Education.Bachelor} {student[Education.Bachelor]}");
-System.Console.WriteLine($"{Education.Specialist} {student[Education.Specialist]}");
-System.Console.WriteLine($"{Education.SecondEducation} {student[Education.SecondEducation]}");
-
-student.Education = Education.Specialist;
-student.Person = new Person("123", "123", DateTime.Now);
-student.GroupNumber = 123;
-
-System.Console.WriteLine(student.ToString());
-
-student.AddExam(new [] {new Exam("123", 123, DateTime.Now)});
-
-System.Console.WriteLine(student.ToString());
-
-System.Console.WriteLine("Введите кол-во строк и столбцов. (Разделители: пробел, запятая)");
-var str = System.Console.ReadLine();
-
-var nrow = Int32.Parse(str.Split(new[] {' ', ','})[0]);
-var ncolumn = Int32.Parse(str.Split(new[] {' ', ','})[1]);
-
-var array1 = new Exam[nrow*ncolumn];
-var array2 = new Exam[nrow, ncolumn];
-var arrayStairs = new Exam[nrow][];
-
-
-for (int i = 0; i < nrow * ncolumn; i++)
+var person1 = new Person();
+var person2 = new Person();
+System.Console.WriteLine(person1.Equals(person2));
+System.Console.WriteLine((object)person1 == (object)person2);
+System.Console.WriteLine(person1.GetHashCode());
+System.Console.WriteLine(person1.GetHashCode());
+var student = new Student(person1, Education.Bachelor, 545);
+student.AddExam(new Exam[] {new Exam()});
+student.AddTest(new Test[] {new Test()});
+Console.WriteLine(student.ToShortString());
+Console.WriteLine(student.Person.ToString());
+var student2 = (Student) student.DeepCopy();
+student2.Education = Education.Specialist;
+Console.WriteLine(student2.ToShortString);
+try
 {
-    array1[i] = new Exam();
+    student2.GroupNumber = 1111;
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
 }
 
-for (int i = 0; i < nrow; i++)
+var enu = student.GetEnumerator();
+var flag = true;
+while (flag)
 {
-    arrayStairs[i] = new Exam[ncolumn];
-    for (int k = 0; k < ncolumn; k++)
-    {
-        array2[i, k] = new Exam();
-        arrayStairs[i][k] = new Exam();
-    }
+    Console.WriteLine(enu.Current);
+    flag = enu.MoveNext();
 }
 
-var start1 = Environment.TickCount;
-foreach (var exam in array1)
+var enu2 = student.GetEnumerator(3);
+flag = true;
+while (flag)
 {
-    exam.Grade = 5;
+    Console.WriteLine(enu.Current);
+    flag = enu2.MoveNext();
 }
 
-var end1 = Environment.TickCount - start1;
-
-var start2 = Environment.TickCount;
-foreach (var exam in array2)
-{
-    exam.Grade = 5;
-}
-
-var end2 = Environment.TickCount - start2;
-
-var start3 = Environment.TickCount;
-foreach (var exams in arrayStairs)
-{
-    foreach (var exam in exams)
-    {
-        exam.Grade = 5;
-    }
-}
-
-var end3 = Environment.TickCount - start3;
-
-System.Console.WriteLine($"array1: {end1} ; array2: {end2} ; arrayStairs: {end3}");
